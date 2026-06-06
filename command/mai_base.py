@@ -295,3 +295,15 @@ async def my_rating_ranking_handler(event: AstrMessageEvent):
                 return
     except (UserNotFoundError, UserNotExistsError, UserDisabledQueryError) as e:
         yield event.plain_result(str(e))
+
+
+async def maimaidxplate(event: AstrMessageEvent):
+    """牌子条件"""
+    help_image_path = Root / 'plate.png'
+    if help_image_path.exists():
+        chain = [
+            Comp.Image.fromFileSystem(str(plate_path))
+        ]
+        yield event.chain_result(chain)
+    else:
+        yield event.plain_result('牌子条件图片未找到')
