@@ -1,13 +1,4 @@
-# astrbot_plugin_maimaidx
-
-[![python3](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-基于 [AstrBot](https://astrbot.app) 框架的街机音游 **舞萌DX** 查分插件
-
-移植自 [maimaiDX](https://github.com/Yuri-YuzuChaN/maimaiDX) 项目（原基于 HoshinoBot/NoneBot）
-
-## 功能特性
+### 功能特性
 
 - 🎵 查询歌曲信息、定数、BPM、曲师、谱师
 - 📊 查询玩家成绩、Best 50、牌子进度
@@ -17,58 +8,7 @@
 - 📈 定数表和完成表查询
 - 📋 排行榜查询
 
-## 安装方法
-
-### 1. 克隆项目
-
-```bash
-git clone https://github.com/ZhiheZier/astrbot_plugin_maimaidx.git
-```
-
-### 2. 下载静态资源
-
-下载静态资源文件，解压后将 `static` 文件夹复制到插件根目录并覆盖（除了config.json）。
-
-- [Cloudreve私人云盘](https://cloud.yuzuchan.moe/f/nXt6/Resource.7z)
-- [onedrive](https://yuzuai-my.sharepoint.com/:u:/g/personal/yuzu_yuzuchan_moe/IQDRlCkUqPlaR409p6Gv_RK6AZ-dJaBtbgZoJMvFI4IJiYw?e=eu5f2h)
-
-### 3. 安装依赖
-
-**重要：AstrBot 不会自动安装插件依赖，需要手动安装。**
-
-安装 Python 依赖：
-
-```bash
-cd astrbot_plugin_maimaidx
-pip install -r requirements.txt
-```
-
-安装 Chromium（用于图片生成）：
-
-```bash
-python -m playwright install --with-deps chromium
-```
-
-**注意**：在 Windows 上需要使用 `python -m playwright` 而不是直接使用 `playwright` 命令。
-
-安装字体（Linux 系统，Windows 可跳过）：
-
-```bash
-apt install fonts-wqy-microhei
-```
-
-### 4. 配置插件
-
-#### 4.1 插件配置（通过 AstrBot 配置界面）
-
-在 AstrBot 的插件配置界面中，可以配置以下选项：
-
-- `bot_name`: 机器人名称，用于在消息中显示（如：今日运势功能），默认为 "Bot"
-- `enable_reply`: 是否在多数指令回复中添加“引用消息”（Reply），默认为开启
-- `maimaidxtoken`: 查分器开发者 token（建议配置；目前牌子进度等功能需要 token）
-- `maimaidxaliaswhitelist`: 别名推送是否采用白名单（默认关闭）。开启后仅向已执行「开启别名推送」的群广播，可避免多群刷屏；关闭时为「全群推送 + disable 黑名单」
-
-#### 4.2 静态配置文件
+### 静态配置文件
 
 修改 `static/config.json` 文件：
 
@@ -82,24 +22,21 @@ apt install fonts-wqy-microhei
 }
 ```
 
-配置说明：
+### 配置说明：
 - `maimaidxtoken`: 查分器开发者 token（建议填写；否则牌子进度等功能会提示需要 token）
 - `maimaidxproberproxy`: 是否使用代理访问查分器 API
 - `maimaidxaliasproxy`: 是否使用代理访问别名库 API
 - `maimaidxaliaspush`: 是否开启别名推送
 - `saveinmem`: 是否将图片保存在内存中（`false` 可节省内存）
 
-### 5. 配置超级管理员
-
-在 AstrBot 主配置文件中设置管理员ID列表（字段名为 `admins_id`），用于执行更新数据等管理命令。
+### 配置超级管理员: 在 AstrBot 主配置文件中设置管理员ID列表（字段名为 `admins_id`），用于执行更新数据等管理命令。
 
 **注意**：管理员ID配置在 AstrBot 的主配置文件中，不在插件配置中。
 
-### 6. 启用插件
 
-将插件目录放置在 AstrBot 的插件目录下，重启 AstrBot 即可。
+### 启用插件: 将插件目录放置在 AstrBot 的插件目录下，重启 AstrBot 即可。
 
-## 主要命令
+
 
 ### 基础查询
 - `查歌 <关键词>` / `search <关键词>` - 搜索歌曲
@@ -161,13 +98,3 @@ apt install fonts-wqy-microhei
 ## 许可证
 
 MIT License
-
-## 致谢
-
-- 原项目：[maimaiDX](https://github.com/Yuri-YuzuChaN/maimaiDX)
-- 查分器：[mai-bot](https://github.com/Diving-Fish/mai-bot)
-- 框架：[AstrBot](https://astrbot.app)
-
-## 支持
-
-如有问题，请提交 Issue 或查看 [AstrBot 帮助文档](https://astrbot.app)
