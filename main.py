@@ -314,15 +314,15 @@ class MaimaiDXPlugin(Star):
         async for result in maimaidxhelp_handler(event):
             yield result
 
- @filter.regex(r'^(牌子条件)$')
+    @filter.regex(r'^(牌子条件)$')
     async def maimaidx_plate_handler(self, event: AstrMessageEvent):
         """牌子条件"""
         group_id = event.message_obj.group_id
         if group_id and not self._is_group_enabled(str(group_id)):
             return
-        
-        from .command.mai_base import maimaidx_plate_handler
-        async for result in maimaidx_plate_handler(event):
+
+        from .command.mai_base import maimaidx_plate_handler as plate_handler
+        async for result in plate_handler(event):
             yield result
     
     @filter.regex(r'^(项目地址maimaiDX|项目地址maimaidx)$')
