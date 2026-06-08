@@ -299,10 +299,10 @@ async def my_rating_ranking_handler(event: AstrMessageEvent):
 
 async def maimaidxplate(event: AstrMessageEvent):
     """牌子条件"""
-    help_image_path = Root / 'plate.png'
-    if help_image_path.exists():
+    plate_image_path = Root / 'plate.png'
+    if plate_image_path.exists():
         chain = [
-            Comp.Image.fromFileSystem(str(plate_path))
+            Comp.Image.fromFileSystem(str(plate_image_path))
         ]
         yield event.chain_result(chain)
     else:
