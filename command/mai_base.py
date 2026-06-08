@@ -118,6 +118,7 @@ async def maimaidxhelp_handler(event: AstrMessageEvent):
 
 
 async def maimaidx_plate_handler(event: AstrMessageEvent):
+    """牌子条件"""
     print("maimaidx_plate_handler triggered")
 
     plate_image_path = Root / 'plate.png'
