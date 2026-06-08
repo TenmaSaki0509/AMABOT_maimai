@@ -78,7 +78,7 @@
 
 ## 迁移说明
 
-本插件从 HoshinoBot/NoneBot 框架迁移到 AstrBot 框架。
+本插件从 HoshinoBot/NoneBot 框架迁移到 AstrBot 框架，由ZhiheZier编写BOT架构，由Yuri-YuzuChaN & BlueDeer担当原始图片素材模板设计，由AMABOT客制化。
 
 ### 主要变更
 
