@@ -117,6 +117,18 @@ async def maimaidxhelp_handler(event: AstrMessageEvent):
         yield event.plain_result('帮助图片未找到')
 
 
+async def maimaidx_plate_handler(event: AstrMessageEvent):
+    """牌子条件"""
+    plate_image_path = Root / 'plate.png'
+    if plate_image_path.exists():
+        chain = [
+            Comp.Image.fromFileSystem(str(plate_image_path))
+        ]
+        yield event.chain_result(chain)
+    else:
+        yield event.plain_result('牌子条件图片未找到')
+
+
 async def maimaidxrepo_handler(event: AstrMessageEvent):
     """项目地址maimaiDX"""
     yield event.plain_result('项目地址：https://github.com/ZhiheZier/astrbot_plugin_maimaidx\n求star，求宣传~')
@@ -296,14 +308,3 @@ async def my_rating_ranking_handler(event: AstrMessageEvent):
     except (UserNotFoundError, UserNotExistsError, UserDisabledQueryError) as e:
         yield event.plain_result(str(e))
 
-
-async def maimaidxplate(event: AstrMessageEvent):
-    """牌子条件"""
-    plate_image_path = Root / 'plate.png'
-    if plate_image_path.exists():
-        chain = [
-            Comp.Image.fromFileSystem(str(plate_image_path))
-        ]
-        yield event.chain_result(chain)
-    else:
-        yield event.plain_result('牌子条件图片未找到')
