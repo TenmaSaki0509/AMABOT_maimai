@@ -118,8 +118,12 @@ async def maimaidxhelp_handler(event: AstrMessageEvent):
 
 
 async def maimaidx_plate_handler(event: AstrMessageEvent):
-    """牌子条件"""
+    print("maimaidx_plate_handler triggered")
+
     plate_image_path = Root / 'plate.png'
+    print("path =", plate_image_path)
+    print("exists =", plate_image_path.exists())
+
     if plate_image_path.exists():
         chain = [
             Comp.Image.fromFileSystem(str(plate_image_path))
