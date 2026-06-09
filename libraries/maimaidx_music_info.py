@@ -58,7 +58,7 @@ async def draw_music_info(
     mr = DrawText(dr, SIYUAN)
     tb = DrawText(dr, TBFONT)
 
-    default_color = (124, 130, 255, 255)
+    default_color = (255, 66, 180, 255)
 
     im.alpha_composite(Image.open(maimaidir / 'logo.png').resize((249, 120)), (65, 25))
     if music.basic_info.is_new:
