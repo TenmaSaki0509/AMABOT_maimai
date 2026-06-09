@@ -228,8 +228,10 @@ class DrawBest(ScoreBaseImage):
             num = '09'
         elif self.Rating < 15000:
             num = '10'
-        else:
+        elif self.Rating < 16000:
             num = '11'
+        else: 
+            num = '12'
         return f'UI_CMN_DXRating_{num}.png'
 
     def _findMatchLevel(self) -> str:
