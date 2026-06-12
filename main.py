@@ -302,9 +302,9 @@ class MaimaiDXPlugin(Star):
         async for result in update_data_handler(event, self.superusers):
             yield result
 
-    @filter.regex(r'^(帮助maimaiDX|帮助maimaidx)$')
+    @filter.regex(r'^(help|帮助maimaidx)$')
     async def maimaidxhelp(self, event: AstrMessageEvent):
-        """帮助maimaiDX"""
+        """help"""
         # 检查群组是否启用
         group_id = event.message_obj.group_id
         if group_id and not self._is_group_enabled(str(group_id)):
