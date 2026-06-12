@@ -174,7 +174,7 @@ async def draw_music_play_data(qqid: int, music_id: str) -> Union[str, MessageSe
         im.alpha_composite(Image.open(maimaidir / f'{music.basic_info.version}.png').resize((183, 90)), (295, 205))
         im.alpha_composite(Image.open(maimaidir / f'{music.type}.png').resize((55, 20)), (350, 560))
         
-        color = (124, 129, 255, 255)
+        color = (255, 48, 170, 255)
         artist = music.basic_info.artist
         if coloumWidth(artist) > 58:
             artist = changeColumnWidth(artist, 57) + '...'
