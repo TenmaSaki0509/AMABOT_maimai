@@ -106,8 +106,8 @@ async def update_data_handler(event: AstrMessageEvent, superusers: list = None):
 
 
 async def maimaidxhelp_handler(event: AstrMessageEvent):
-    """帮助maimaiDX"""
-    help_image_path = Root / 'maimaidxhelp.png'
+    """help"""
+    help_image_path = Root / 'help.png'
     if help_image_path.exists():
         chain = [
             Comp.Image.fromFileSystem(str(help_image_path))
