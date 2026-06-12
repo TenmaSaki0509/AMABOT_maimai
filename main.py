@@ -337,7 +337,7 @@ class MaimaiDXPlugin(Star):
             yield result
 
     @filter.regex(r'^(真段位表)$')
-    async def maimaidx_rank1_handler(self, event: AstrMessageEvent):
+    async def maimaidx_rank2_handler(self, event: AstrMessageEvent):
         """真段位表"""
         group_id = event.message_obj.group_id
         if group_id and not self._is_group_enabled(str(group_id)):
