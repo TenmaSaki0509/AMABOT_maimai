@@ -324,6 +324,17 @@ class MaimaiDXPlugin(Star):
         from .command.mai_base import maimaidx_plate_handler as plate_handler
         async for result in plate_handler(event):
             yield result
+
+    @filter.regex(r'^(段位表)$')
+    async def maimaidx_rank1_handler(self, event: AstrMessageEvent):
+        """段位表"""
+        group_id = event.message_obj.group_id
+        if group_id and not self._is_group_enabled(str(group_id)):
+            return
+
+        from .command.mai_base import maimaidx_rank1_handler as rank1_handler
+        async for result in rank1_handler(event):
+            yield result
     
     @filter.regex(r'^(项目地址maimaiDX|项目地址maimaidx)$')
     async def maimaidxrepo(self, event: AstrMessageEvent):
