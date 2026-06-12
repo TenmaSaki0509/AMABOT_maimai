@@ -133,6 +133,37 @@ async def maimaidx_plate_handler(event: AstrMessageEvent):
     else:
         yield event.plain_result('牌子条件图片未找到')
 
+async def maimaidx_rank1_handler(event: AstrMessageEvent):
+    """段位表"""
+    print("maimaidx_rank1_handler triggered")
+
+    plate_image_path = Root / 'rank1.png'
+    print("path =", plate_image_path)
+    print("exists =", plate_image_path.exists())
+
+    if plate_image_path.exists():
+        chain = [
+            Comp.Image.fromFileSystem(str(plate_image_path))
+        ]
+        yield event.chain_result(chain)
+    else:
+        yield event.plain_result('段位表图片未找到')
+
+async def maimaidx_rank2_handler(event: AstrMessageEvent):
+    """真段位表"""
+    print("maimaidx_rank2_handler triggered")
+
+    plate_image_path = Root / 'rank2.png'
+    print("path =", plate_image_path)
+    print("exists =", plate_image_path.exists())
+
+    if plate_image_path.exists():
+        chain = [
+            Comp.Image.fromFileSystem(str(plate_image_path))
+        ]
+        yield event.chain_result(chain)
+    else:
+        yield event.plain_result('真段位表图片未找到')
 
 async def maimaidxrepo_handler(event: AstrMessageEvent):
     """项目地址maimaiDX"""
