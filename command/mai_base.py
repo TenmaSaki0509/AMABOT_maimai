@@ -213,7 +213,7 @@ async def mai_today_handler(event: AstrMessageEvent):
     # 动态获取 BOTNAME，确保获取最新值
     from .. import get_botname
     botname = get_botname()
-    msg += f'{botname} Bot提醒您：打机时不要大力拍打或滑动哦\n今日推荐歌曲：\n'
+    msg += f'{botname} 提醒您：请勿拆机，拆机我就让滴蜡熊吃你绝赞！\n今日推荐歌曲：\n'
     msg += f'ID.{music.id} - {music.title}\n'
     msg += ds
     
