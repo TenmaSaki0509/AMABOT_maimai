@@ -137,7 +137,7 @@ async def maimaidx_rank1_handler(event: AstrMessageEvent):
     """段位表"""
     print("maimaidx_rank1_handler triggered")
 
-    plate_image_path = Root / 'rank1.png'
+    plate_image_path = Root / 'Rank1.png'
     print("path =", plate_image_path)
     print("exists =", plate_image_path.exists())
 
@@ -153,7 +153,7 @@ async def maimaidx_rank2_handler(event: AstrMessageEvent):
     """真段位表"""
     print("maimaidx_rank2_handler triggered")
 
-    plate_image_path = Root / 'rank2.png'
+    plate_image_path = Root / 'Rank2.png'
     print("path =", plate_image_path)
     print("exists =", plate_image_path.exists())
 
