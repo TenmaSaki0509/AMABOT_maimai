@@ -470,7 +470,7 @@ async def draw_plate_table(qqid: int, version: str, plan: str) -> Union[MessageS
         unfinished_bg = Image.open(maimaidir / 'unfinished_bg_2.png')
         complete_bg = Image.open(maimaidir / 'complete_bg_2.png')
 
-        im = Image.open(platedir / f'{version}.png')
+        im = Image.open(platedir / 'plate_bg.png')
         draw = ImageDraw.Draw(im)
         tr = DrawText(draw, TBFONT)
         mr = DrawText(draw, SIYUAN)
