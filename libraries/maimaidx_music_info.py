@@ -168,8 +168,8 @@ async def draw_music_play_data(qqid: int, music_id: str) -> Union[str, MessageSe
         mr = DrawText(dr, SIYUAN)
 
         im.alpha_composite(Image.open(maimaidir / 'logo.png').resize((249, 120)), (0, 34))
-        cover = Image.open(music_picture(music_id))
-        im.alpha_composite(cover.resize((300, 300)), (100, 260))
+        cover = Image.open(cover_path).convert("RGBA").resize((300, 300))
+        im.alpha_composite(cover, (100, 260))
         im.alpha_composite(Image.open(maimaidir / f'info-{category[music.basic_info.genre]}.png'), (100, 260))
         im.alpha_composite(Image.open(maimaidir / f'{music.basic_info.version}.png').resize((183, 90)), (295, 205))
         im.alpha_composite(Image.open(maimaidir / f'{music.type}.png').resize((55, 20)), (350, 560))
