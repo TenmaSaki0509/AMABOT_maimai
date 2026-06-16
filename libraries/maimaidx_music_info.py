@@ -470,14 +470,16 @@ async def draw_plate_table(qqid: int, version: str, plan: str) -> Union[MessageS
         unfinished_bg = Image.open(maimaidir / 'unfinished_bg_2.png')
         complete_bg = Image.open(maimaidir / 'complete_bg_2.png')
 
-        im = Image.open(platedir / 'plate_bg.png')
+        im = Image.open(platedir / 'plate_bg.png')convert("RGBA")
         draw = ImageDraw.Draw(im)
         tr = DrawText(draw, TBFONT)
         mr = DrawText(draw, SIYUAN)
         
-        im.alpha_composite(Image.open(maimaidir / 'plate_num.png'), (185, 20))
+        im.alpha_composite(Image.open(maimaidir / 'plate_num.png'), convert("RGBA"),
+        (185, 20)
+        )
         im.alpha_composite(
-            Image.open(platedir / f'{version}{"極" if plan == "极" else plan}.png').resize((1000, 161)), 
+            Image.open(platedir / f'{version}{"極" if plan == "极" else plan}.png').convert("RGBA").resize((1000, 161)), 
             (200, 35)
         )
         lv: List[set[int]] = [set() for _ in range(number)]
