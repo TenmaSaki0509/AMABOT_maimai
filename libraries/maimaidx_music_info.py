@@ -475,14 +475,18 @@ async def draw_plate_table(qqid: int, version: str, plan: str) -> Union[MessageS
         tr = DrawText(draw, TBFONT)
         mr = DrawText(draw, SIYUAN)
         
-       im.alpha_composite(
-           Image.open(maimaidir / 'plate_num.png').convert("RGBA"),
-           (185, 20)
-       )
+        im.alpha_composite(   
+          Image.open(maimaidir / 'plate_num.png').convert("RGBA"),
+          (185, 20)
+        )
+
         im.alpha_composite(
-            Image.open(platedir / f'{version}{"極" if plan == "极" else plan}.png').resize((1000, 161)), 
+            Image.open(
+                platedir / f'{version}{"極" if plan == "极" else plan}.png'
+            ).convert("RGBA").resize((1000, 161)),
             (200, 35)
         )
+
         lv: List[set[int]] = [set() for _ in range(number)]
         y = 245
         # if plan == '者':
