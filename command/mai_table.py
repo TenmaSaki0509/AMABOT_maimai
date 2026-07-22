@@ -191,7 +191,7 @@ async def plate_process_handler(event: AstrMessageEvent):
     if is_reply_enabled():
         chain.insert(0, Comp.Reply(id=event.message_obj.message_id))
     yield event.chain_result(chain)
-
+    
 
 async def level_process_handler(event: AstrMessageEvent):
     """等级进度命令处理"""
